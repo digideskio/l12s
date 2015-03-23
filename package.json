@@ -3,7 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "description": "Yeoman workflow for l12s",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "3.3.2",
+    "bootstrap-sass": "3.3.4",
+    "bootswatch": "3.3.2"
+  },
   "devDependencies": {
     "browser-sync": "^1.5.7",
     "browserify": "^9.0.3",

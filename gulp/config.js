@@ -9,6 +9,7 @@ var BUILD_DIR = path.join(__dirname, '../.build');
 var STATIC_DIR = path.join(BUILD_DIR, 'assets');
 var SRC_DIR = path.join(__dirname, '../src');
 var ASSETS_DIR = path.join(SRC_DIR, 'assets')
+var NPM_DIR = path.join(__dirname, '../node_modules');
 
 module.exports = {
 
@@ -71,12 +72,16 @@ module.exports = {
       path.join(ASSETS_DIR, 'sass/site.scss')
     ],
     includePaths: [
-
+      NPM_DIR
     ]
   },
 
   sassLint: {
 
+  },
+
+  serve: {
+    baseDir: BUILD_DIR
   }
 
 };

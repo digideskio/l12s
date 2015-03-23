@@ -1,7 +1,7 @@
-/* 
-The main SCSS file for everything, yep
-*/
+/**
+ *
+ */
 
-@import "poole";
-@import "syntax";
-@import "lanyon";
+@import "bootstrap-sass/assets/stylesheets/bootstrap.scss";
+@import "bootswatch/flatly/variables.scss";
+@import "bootswatch/flatly/bootswatch.scss";
