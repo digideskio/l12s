@@ -1,3 +1,8 @@
 # l12s
 
-[Describe the project.]
+## Getting started
+
+```
+bundle install
+npm install
+```

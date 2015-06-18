@@ -4,6 +4,7 @@
 
 var gulp = require('gulp');
 var jsHint = require('gulp-jshint')
+var path = require('path');
 var stylish = require('jshint-stylish');
 
 var config = require('../config');

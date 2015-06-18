@@ -12,7 +12,7 @@ var config = require('../config');
 gulp.task('img', function() {
   var imgDest = path.join(config.STATIC_DIR, 'img');
 
-  gulp.src(path.join(config.WWW_DIR, 'img/**/*'))
+  gulp.src(path.join(config.ASSETS_DIR, 'img/**/*'))
     .pipe(gulpChanged(imgDest))
     .pipe(imageMin({
       multipass: true,
