@@ -4,35 +4,49 @@
 
 var browserify = require('browserify');
 var gulp = require('gulp');
+var gutil = require('gulp-util');
+var minifyify = require('minifyify');
+var path = require('path');
 var source = require('vinyl-source-stream');
 var watchify  = require('watchify');
 
-var config = require('../config').browserify;
+
 var bundleLogger = require('../util/bundle_logger');
+var config = require('../config');
 var handleErrors = require('../util/handle_errors');
+
 
 gulp.task('browserify', function() {
 
   var bundler = browserify({
-    // Required watchify args
-    cache: {}, packageCache: {}, fullPaths: true,
-    entries: config.entries,
-    debug: config.debug
+    cache: {},
+    packageCache: {},
+    fullPaths: true,
+    entries: [
+      path.join(config.ASSETS_DIR, 'js/site.js')
+    ],
+    debug: !gutil.env.production
   });
 
+  if (gutil.env.production) {
+    bundler.plugin('minifyify', {
+      map: '/static/js/bundle.map.js',
+      output: path.join(config.STATIC_DIR, 'js/bundle.map.js')
+    });
+  }
+
   var reportFinished = function() {
-    // Log when bundling completes
-    bundleLogger.end(config.outputName)
+    bundleLogger.end('l12s.min.js');
   };
 
   var bundle = function() {
-    bundleLogger.start(config.outputName);
+    bundleLogger.start('l12s.min.js');
 
     return bundler
       .bundle()
       .on('error', handleErrors)
-      .pipe(source(config.outputName))
-      .pipe(gulp.dest(config.dest))
+      .pipe(source('l12s.min.js'))
+      .pipe(gulp.dest(path.join(config.STATIC_DIR, 'js')))
       .on('end', reportFinished);
   };
 

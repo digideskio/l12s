@@ -1,13 +1,23 @@
-//// Optimizes the images that exists
-//gulp.task("images", function () {
-//  return gulp.src("src/assets/images/**")
-//    .pipe($.changed("site/assets/images"))
-//    .pipe($.imagemin({
-//      // Lossless conversion to progressive JPGs
-//      progressive: true,
-//      // Interlace GIFs for progressive rendering
-//      interlaced: true
-//    }))
-//    .pipe(gulp.dest("site/assets/images"))
-//    .pipe($.size({title: "images"}));
-//});
+/**
+ * Copies app images to the build directories.
+ */
+
+var gulp = require('gulp');
+var gulpChanged = require('gulp-changed');
+var imageMin = require('gulp-imagemin');
+var path = require('path');
+
+var config = require('../config');
+
+gulp.task('img', function() {
+  var imgDest = path.join(config.STATIC_DIR, 'img');
+
+  gulp.src(path.join(config.WWW_DIR, 'img/**/*'))
+    .pipe(gulpChanged(imgDest))
+    .pipe(imageMin({
+      multipass: true,
+      optimizationLevel: 1,
+      progressive: true
+    }))
+    .pipe(gulp.dest(imgDest));
+});

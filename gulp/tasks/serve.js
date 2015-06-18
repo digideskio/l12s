@@ -5,7 +5,7 @@
 var browserSync = require('browser-sync');
 var gulp = require('gulp');
 
-var config = require('../config').serve;
+var config = require('../config');
 
 
 gulp.task('serve', function() {
@@ -13,7 +13,7 @@ gulp.task('serve', function() {
   browserSync({
     notify: true,
     server: {
-      baseDir: config.baseDir
+      baseDir: config.BUILD_DIR
     }
   });
 

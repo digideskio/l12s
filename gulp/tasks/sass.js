@@ -8,7 +8,8 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var size = require('gulp-size');
 
-var config = require('../config').sass;
+var config = require('../config');
+
 
 gulp.task('sass', function() {
 
@@ -16,9 +17,12 @@ gulp.task('sass', function() {
   //   .pipe($.autoprefixer("last 1 version", { cascade: true }))
   // TODO(leah): Add asset revision versions
 
-  gulp.src(config.paths)
-    .pipe(sass({includePaths: config.includePaths, errLogToConsole: true}))
-    .pipe(rename(config.fileName))
+  gulp.src(path.join(config.ASSETS_DIR, 'sass/site.scss'))
+    .pipe(sass({
+      includePaths: [config.NPM_DIR],
+      errLogToConsole: true
+    }))
+    .pipe(rename('l12s.min.css'))
     .pipe(size({title: config.fileName}))
-    .pipe(gulp.dest(config.dest));
+    .pipe(gulp.dest(path.join(STATIC_DIR, 'css')));
 });
