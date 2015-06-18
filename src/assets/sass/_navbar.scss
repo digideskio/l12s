@@ -1,5 +1,6 @@
 .navbar {
   background-color: $light-blue;
+  border-radius: 0;
 }
 
 .navbar-custom .navbar-brand {
@@ -13,6 +14,5 @@
 }
 
 .navbar-padding {
-  padding: 1.125% 0px 1.125% 0px;
+  padding: 1.375% 0px 1.375% 0px;
 }
-

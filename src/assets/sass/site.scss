@@ -2,13 +2,13 @@
  *
  */
 
-@import "bootstrap-sass/assets/stylesheets/bootstrap.scss";
-@import "bootswatch/flatly/variables.scss";
-@import "bootswatch/flatly/bootswatch.scss";
-
 @import "variables";
-@import "navbar";
+@import "social";
 
-body {
-  background-color: $background-grey;
+html, body {
+  height: 100%;
+}
+
+.simple-site {
+  height: 100%;
 }

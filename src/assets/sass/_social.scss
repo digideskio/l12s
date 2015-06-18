@@ -1,0 +1,28 @@
+.social-icons {
+
+  align-items: center;
+  display: flex;
+  min-height: 100%;
+
+  a {
+    color: inherit;
+  }
+
+  i {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .github:hover {
+    color: #4078c0;
+  }
+  .twitter:hover {
+    color: #00aced;
+  }
+  .linkedin:hover {
+    color: #007bb6;
+  }
+}
