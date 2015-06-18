@@ -25,5 +25,5 @@ gulp.task('sass', function() {
     }))
     .pipe(rename('l12s.min.css'))
     .pipe(size({title: config.fileName}))
-    .pipe(gulp.dest(path.join(config.STATIC_DIR, 'css')));
+    .pipe(gulp.dest(path.join(config.BUILD_DIR, 'assets/css')));
 });

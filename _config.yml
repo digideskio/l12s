@@ -3,7 +3,7 @@
 title: l12s
 description: 
 tagline: 
-url: localhost:3000
+url: l12s.com
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
 source: src
@@ -22,14 +22,10 @@ author:
 # general setting for Jekyll
 googleAnalytics: UA-XXXXX-X
 
-# _config.build.yml overwrites these options when you run `gulp build`
-# Enables future posts (posts with dates in the future) and drafts
-future: true
-show_drafts: true
-# Disables the more accurate related posts for faster generating of the site
-lsi: false
-# Only make the last 10 posts so generating isn't slow
-limit_posts: 10
+future: false
+show_drafts: false
+lsi: true
+limit_posts: 0
 
 # Permalink structure and pagination options
 relative_permalinks: true

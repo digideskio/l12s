@@ -10,7 +10,7 @@ var path = require('path');
 var config = require('../config');
 
 gulp.task('img', function() {
-  var imgDest = path.join(config.STATIC_DIR, 'img');
+  var imgDest = path.join(config.ASSETS_DIR, 'img');
 
   gulp.src(path.join(config.ASSETS_DIR, 'img/**/*'))
     .pipe(gulpChanged(imgDest))

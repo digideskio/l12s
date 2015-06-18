@@ -31,7 +31,7 @@ gulp.task('browserify', function() {
   if (gutil.env.production) {
     bundler.plugin('minifyify', {
       map: '/static/js/bundle.map.js',
-      output: path.join(config.STATIC_DIR, 'js/bundle.map.js')
+      output: path.join(config.BUILD_DIR, 'assets/js/bundle.map.js')
     });
   }
 
@@ -46,7 +46,7 @@ gulp.task('browserify', function() {
       .bundle()
       .on('error', handleErrors)
       .pipe(source('l12s.min.js'))
-      .pipe(gulp.dest(path.join(config.STATIC_DIR, 'js')))
+      .pipe(gulp.dest(path.join(config.BUILD_DIR, 'assets/js')))
       .on('end', reportFinished);
   };
 
