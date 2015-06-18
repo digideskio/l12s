@@ -5,3 +5,10 @@
 @import "bootstrap-sass/assets/stylesheets/bootstrap.scss";
 @import "bootswatch/flatly/variables.scss";
 @import "bootswatch/flatly/bootswatch.scss";
+
+@import "variables";
+@import "navbar";
+
+body {
+  background-color: $background-grey;
+}
