@@ -4,6 +4,7 @@
 
 var autoprefixer = require('gulp-autoprefixer');
 var gulp = require('gulp');
+var path = require('path');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var size = require('gulp-size');
@@ -24,5 +25,5 @@ gulp.task('sass', function() {
     }))
     .pipe(rename('l12s.min.css'))
     .pipe(size({title: config.fileName}))
-    .pipe(gulp.dest(path.join(STATIC_DIR, 'css')));
+    .pipe(gulp.dest(path.join(config.STATIC_DIR, 'css')));
 });
