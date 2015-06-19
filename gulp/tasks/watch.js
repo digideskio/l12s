@@ -11,5 +11,5 @@ var config = require('../config');
 
 gulp.task('watch', function() {
   gulp.watch(path.join(config.ASSETS_DIR, 'sass/**.scss'), ['sass']);
-  gulp.watch(path.join(config.SRC_DIR, '**/*.html'), ['buildJekyll']);
+  gulp.watch(path.join(config.SRC_DIR, '**/*.html'), ['buildJekyll:dev']);
 });

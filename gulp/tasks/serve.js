@@ -9,7 +9,7 @@ var path = require('path');
 var config = require('../config');
 
 
-gulp.task('serve', ['build', 'watch'], function() {
+gulp.task('serve', ['build:dev', 'watch'], function() {
 
   browserSync({
     notify: true,
