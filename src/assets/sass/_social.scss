@@ -25,27 +25,28 @@
   }
 }
 
-.social-icons-horizontal {
-  align-items: center;
-  display: none;
-  min-height: 100%;
+
+.social-icons-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+
+  a {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
 }
 
-.social-icons-vertical {
-  height: 100%;
-
-  .row {
-    align-items: center;
-    display: flex;
+@media (min-width: 0px) {
+  .social-icons-col {
     height: 33%;
   }
 }
 
 @media (min-width: 768px) {
-  .social-icons-vertical {
-    display: none;
-  }
-  .social-icons-horizontal {
-    display: flex;
+  .social-icons-col {
+    height: 100%;
   }
 }
